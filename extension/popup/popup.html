@@ -12,128 +12,14 @@
 </head>
 <body>
   <div class="container">
-    <div class="mt-3 mb-3 btn-group btn-group-justified" role="group" id="downloading">
-      <button class="btn btn-primary" type="button" disabled id="downloadingButton">
-        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          正在获取简历下载地址..
+    <div class="mt-3 mb-3 btn-group btn-group-justified" role="group" id="start">
+      <button class="btn btn-primary" type="button" id="startButton">
+         开始 
       </button>
-      <button class="btn btn-primary" type="button" disabled id="downloadFailedButton" hidden="hidden">
-          获取简历地址失败，请确保当前处在简历页面
+      <button class="btn btn-primary" type="button" disabled id="errorButton" hidden="hidden">
+         错误 
       </button>
     </div>
-
-    <form id="mainForm" hidden="hidden">
-      <div class="input-group-sm input-group mb-3 mt-3">
-        <input type="text" class="form-control" id="project" value="未来教育招聘">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" >项目</button>
-          <div class="dropdown-menu pre-scrollable" id=projectList>
-          </div>
-        </div>
-        <div class="invalid-feedback">
-           项目不能为空
-         </div>
-      </div>
-
-      <div class="input-group mb-3 custom-file input-group-sm ">
-        <input type="file" class="custom-file-input form-control" id="inputFile" required>
-        <div class="invalid-feedback">
-          附件不能为空
-        </div>
-        <label class="custom-file-label" for="inputFile">附件</label>
-      </div>
-
-      <div class="mb-3 input-group input-group-sm">
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="summary">
-        <div class="input-group-append">
-          <span class="input-group-text">主题</span>
-         </div>
-         <div class="invalid-feedback">
-           主题不能为空
-         </div>
-      </div> 
-
-      <!--div class="mb-3 input-group input-group-sm">
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="description">
-        <div class="input-group-append">
-          <span class="input-group-text">描述</span>
-         </div>
-      </div--> 
-
-      <div class="input-group-sm input-group mb-3">
-        <input type="text" class="form-control" id="assignee" value="陈淼">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" >经办人</button>
-          <div class="dropdown-menu pre-scrollable" id=assigneeList>
-            <a class="dropdown-item components-list">请先选择项目</a>
-          </div>
-        </div>
-        <div class="invalid-feedback">
-          经办人不能为空
-         </div>
-      </div>
-
-      <div class="mb-3 input-group input-group-sm">
-        <input type="text" class="form-control" id="issueType" value="任务">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" >问题类型</button>
-          <div class="dropdown-menu pre-scrollable" id=issueTypeList>
-            <a class="dropdown-item" href="#">Action</a>
-          </div>
-        </div>
-        <div class="invalid-feedback">
-          问题类型不能为空
-        </div>
-      </div>
-
-      <div class="mb-3 input-group input-group-sm">
-        <input type="text" class="form-control" aria-label="Text input with dropdown button" id="components" value="学务">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" >模块</button>
-          <div class="dropdown-menu pre-scrollable" id=componentsList>
-            <a class="dropdown-item components-list">请先选择项目</a>
-          </div>
-        </div>
-        <div class="invalid-feedback">
-          模块不能为空
-        </div>
-      </div>
-
-      <div class="mb-3 input-group input-group-sm">
-        <input type="text" class="form-control" aria-label="Text input with dropdown button" id="resumeType" value="简历搜索">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" >简历类型</button>
-          <div class="dropdown-menu pre-scrollable" id=resumeTypeList>
-          </div>
-        </div>
-        <div class="invalid-feedback">
-          简历类型不能为空
-        </div>
-      </div>
-
-      <div class="mb-3 input-group input-group-sm">
-        <input type="text" class="form-control" aria-label="Text input with dropdown button" id="resumeSource" value="BOSS 直聘">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" >简历来源</button>
-          <div class="dropdown-menu pre-scrollable" id=resumeSourceList>
-            <a class="dropdown-item" href="#">Action</a>
-          </div>
-        </div>
-        <div class="invalid-feedback">
-          简历来源不能为空
-        </div>
-      </div>
-
-      <div class="form-group">
-        <button class = "btn btn-outline-primary" id="createIssue">创建</button>
-      </div>
-
-      <div class="m-3 input-group spinner-border" role="status" id='loading' hidden="hidden">
-        <span class="sr-only">Loading...</span>
-      </div>
-      <div class="m-3 alert alert-primary" role="alert" id="alertText">
-      </div>
-    </form>
   </div>
 
   <script src="../js/popup.js"></script>
