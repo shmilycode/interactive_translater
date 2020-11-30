@@ -53,13 +53,18 @@ class RFCFormatFactory:
     self.article_map = []
     formatted_line = self.FormatNextLine()
     index = 0
+    skip_line = 0
     while (formatted_line != None):
       (need_translate, line) = formatted_line
       self.article_map.append(LineStatus(index, need_translate, line))
       if self.article_map[index].need_translate:
         self.line_needs_to_translate.append(self.article_map[index])
+        if skip_line < self.translate_index:
+          self.line_needs_to_translate[skip_line].translated = True
+          skip_line += 1
       formatted_line = self.FormatNextLine()
       index += 1
+    logging.debug("Total %d lines"%(len(self.line_needs_to_translate)))
 
   def GetNextLineToTranslate(self):
     if (self.translate_index == len(self.line_needs_to_translate)):

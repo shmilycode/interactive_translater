@@ -10,7 +10,7 @@ rfc_root = "https://tools.ietf.org/rfc"
 if __name__ == "__main__":
   logging.basicConfig(format='%(levelname)s   %(asctime)s   %(message)s', level=logging.DEBUG)
   loader = RFCLoader(rfc_root)
-  article = loader.Load("6190")
+  article = loader.Load("3261")
 
   formatter = RFCFormatter()
   factory = RFCFormatFactory(article, formatter)
